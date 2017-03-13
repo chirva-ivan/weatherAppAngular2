@@ -11,7 +11,7 @@ import { WeatherService } from '../../services/weather.service'
 export class WeatherInputComponent implements OnInit {
 
   public cityName: string = '';
-  public cityList: Array<any> = [];
+  public cityList: Array<Object> = [];
 
   constructor(private _weatherService: WeatherService) {}
 
@@ -19,13 +19,12 @@ export class WeatherInputComponent implements OnInit {
     let self = this;
 
     self.cityName = text;
-    return self._weatherService.searchCity(self.cityName);
-    // self._weatherService.searchCity(text).subscribe(
-    //   (data) => {
-    //     self.cityList = data;
-    //     console.log(self.cityList)
-    //   }
-    // );
+    self._weatherService.searchCity(self.cityName).subscribe(
+      (data) => {
+        self.cityList = data;
+        console.log(self.cityList)
+      }
+    );
   }
 
   ngOnInit() {
