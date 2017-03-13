@@ -3,6 +3,8 @@ import { Http } from '@angular/http';
 import { Observable } from "rxjs/Observable";
 import 'rxjs/Rx';
 
+import { CityItem } from '../classes/city-item'
+
 @Injectable()
 export class WeatherService {
   constructor (private _http: Http) {}
@@ -10,18 +12,17 @@ export class WeatherService {
   searchCity(cityName: string): Observable <any> {
     return this._http.get(`http://maps.googleapis.com/maps/api/geocode/json?address=${cityName}`)
       .map((response) => {
-        let data = response.json();
+        const data = response.json();
 
         return data.results.map(
           (el) => {
-            let fields = {
-              formatted_address: el.formatted_address,
+            const fields = {
+              name: el.formatted_address,
               lat: el.geometry.location.lat,
               lng: el.geometry.location.lng
             };
 
-            return fields;
-            // return new CityItem(fields);
+            return new CityItem(fields);
           }
         );
       })
