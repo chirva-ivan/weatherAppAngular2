@@ -8,8 +8,8 @@ import { CityItem } from '../../classes/city-item';
 
 @Component({
   selector: 'app-weather-dropdown',
-  templateUrl: './weather-input.component.html',
-  styleUrls: ['./weather-input.component.css'],
+  templateUrl: './weather-dropdown.component.html',
+  styleUrls: ['./weather-dropdown.component.css'],
   providers: [WeatherService]
 })
 export class WeatherDropdownComponent implements OnInit {

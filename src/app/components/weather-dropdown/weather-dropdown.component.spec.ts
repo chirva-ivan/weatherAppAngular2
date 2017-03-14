@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WeatherDropdownComponent } from './weather-input.component';
+import { WeatherDropdownComponent } from './weather-dropdown.component';
 
 describe('WeatherDropdownComponent', () => {
   let component: WeatherDropdownComponent;
