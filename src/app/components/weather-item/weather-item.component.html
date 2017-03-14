@@ -1,3 +1,2 @@
-<p>
-  weather-item works!
-</p>
+<input [formControl]="searchBox" placeholder="Search City" />
+<div *ngFor="let city of results">{{city.name}}</div>

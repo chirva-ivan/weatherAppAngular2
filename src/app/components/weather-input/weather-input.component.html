@@ -1,2 +1,4 @@
-<input type="text" [ngModel]="cityName" (keyup)="search($event.target.value)" class="form-control"/>
-<app-weather-item></app-weather-item>
+<app-weather-item
+  (searchEvent)="onSearch($event)"
+  [results]="cityList">
+</app-weather-item>

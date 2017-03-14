@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Observer } from 'rxjs/Observer';
+import 'rxjs/Rx';
 
-import { WeatherService } from '../../services/weather.service'
+import { WeatherService } from '../../services/weather.service';
+import { CityItem } from '../../classes/city-item';
 
 @Component({
   selector: 'app-weather-input',
@@ -15,16 +19,22 @@ export class WeatherInputComponent implements OnInit {
 
   constructor(private _weatherService: WeatherService) {}
 
-  search(text: any) {
-    let self = this;
+  onSearch(event) {
+    this.cityName = event;
+    this._weatherService.searchCity(this.cityName).subscribe(result => {
+      this.cityList = result.map(
+        (el) => {
+          const fields = {
+            name: el.formatted_address,
+            lat: el.geometry.location.lat,
+            lng: el.geometry.location.lng
+          };
 
-    self.cityName = text;
-    self._weatherService.searchCity(self.cityName).subscribe(
-      (data) => {
-        self.cityList = data;
-        console.log(self.cityList)
-      }
-    );
+          return new CityItem(fields);
+        }
+      );
+      console.log(this.cityList);
+    }, error => console.log('Could not load artists'));
   }
 
   ngOnInit() {
