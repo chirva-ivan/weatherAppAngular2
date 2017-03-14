@@ -5,13 +5,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { WeatherInputComponent } from './components/weather-input/weather-input.component';
+import { WeatherDropdownComponent } from './components/weather-input/weather-input.component';
 import { WeatherItemComponent } from './components/weather-item/weather-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherInputComponent,
+    WeatherDropdownComponent,
     WeatherItemComponent
   ],
   imports: [

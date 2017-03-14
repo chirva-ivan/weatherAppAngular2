@@ -7,19 +7,19 @@ import { WeatherService } from '../../services/weather.service';
 import { CityItem } from '../../classes/city-item';
 
 @Component({
-  selector: 'app-weather-input',
+  selector: 'app-weather-dropdown',
   templateUrl: './weather-input.component.html',
   styleUrls: ['./weather-input.component.css'],
   providers: [WeatherService]
 })
-export class WeatherInputComponent implements OnInit {
+export class WeatherDropdownComponent implements OnInit {
 
   public cityName: string = '';
   public cityList: Array<Object> = [];
 
   constructor(private _weatherService: WeatherService) {}
 
-  onSearch(event) {
+  onSearch(event: string) {
     this.cityName = event;
     this._weatherService.searchCity(this.cityName).subscribe(result => {
       this.cityList = result.map(
@@ -34,7 +34,7 @@ export class WeatherInputComponent implements OnInit {
         }
       );
       console.log(this.cityList);
-    }, error => console.log('Could not load artists'));
+    });
   }
 
   ngOnInit() {

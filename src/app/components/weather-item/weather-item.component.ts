@@ -18,7 +18,7 @@ export class WeatherItemComponent implements OnInit {
   constructor() {
     this.searchBox
       .valueChanges
-      .subscribe((event) => this.searchEvent.emit(event));
+      .subscribe((event: string) => this.searchEvent.emit(event));
   }
 
   ngOnInit() {
