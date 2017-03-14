@@ -19,8 +19,8 @@ export class WeatherDropdownComponent implements OnInit {
 
   constructor(private _weatherService: WeatherService) {}
 
-  onSearch(event: string) {
-    this._weatherService.searchCity(event).subscribe(result => {
+  onSearch(query: string) {
+    this._weatherService.searchCity(query).subscribe(result => {
       this.cityList = result.map(
         (el) => {
           const fields = {
@@ -36,8 +36,8 @@ export class WeatherDropdownComponent implements OnInit {
     });
   }
 
-  onSelect(event) {
-    this.selectedCity = event;
+  onSelect(city: CityItem) {
+    this.selectedCity = city;
     this.cityList = [];
   }
 
