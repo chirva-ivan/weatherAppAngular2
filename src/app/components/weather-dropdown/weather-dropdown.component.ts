@@ -14,14 +14,13 @@ import { CityItem } from '../../classes/city-item';
 })
 export class WeatherDropdownComponent implements OnInit {
 
-  public cityName: string = '';
   public cityList: Array<Object> = [];
+  public selectedCity: CityItem = new CityItem({});
 
   constructor(private _weatherService: WeatherService) {}
 
   onSearch(event: string) {
-    this.cityName = event;
-    this._weatherService.searchCity(this.cityName).subscribe(result => {
+    this._weatherService.searchCity(event).subscribe(result => {
       this.cityList = result.map(
         (el) => {
           const fields = {
@@ -35,6 +34,11 @@ export class WeatherDropdownComponent implements OnInit {
       );
       console.log(this.cityList);
     });
+  }
+
+  onSelect(event) {
+    this.selectedCity = event;
+    this.cityList = [];
   }
 
   ngOnInit() {

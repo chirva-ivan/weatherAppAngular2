@@ -1,4 +1,7 @@
 <app-weather-item
   (searchEvent)="onSearch($event)"
-  [results]="cityList">
+  (selectEvent)="onSelect($event)"
+  [results]="cityList"
+  [selected]="selectedCity"
+  >
 </app-weather-item>
