@@ -1,10 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
+import { WeatherItem } from '../classes/weather-item';
+
 @Injectable()
 export class WeatherService {
+
+  public listUpdated = new EventEmitter();
+  private _weatherList: Array<WeatherItem> = [];
+
   constructor (private _http: Http) {}
 
   searchCity(cityName: string): Observable <any> {
@@ -37,5 +43,15 @@ export class WeatherService {
         console.error(error);
         return Observable.throw(error.json());
       });
+  }
+
+  updateWeatherList(item: WeatherItem) {
+    this._weatherList.push(item);
+    this.listUpdated.emit('test');
+    console.log('updateWeatherList');
+  }
+
+  getWeatherList() {
+    return this._weatherList;
   }
 }

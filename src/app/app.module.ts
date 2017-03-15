@@ -7,12 +7,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CityDropdownComponent } from './components/city-dropdown/city-dropdown.component';
 import { CityItemComponent } from './components/city-item/city-item.component';
+import { WeatherListComponent } from './components/weather-list/weather-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CityDropdownComponent,
-    CityItemComponent
+    CityItemComponent,
+    WeatherListComponent
   ],
   imports: [
     BrowserModule,

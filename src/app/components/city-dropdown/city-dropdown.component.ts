@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import 'rxjs/Rx';
@@ -48,8 +48,7 @@ export class CityDropdownComponent implements OnInit {
         temp: Math.floor(result.main.temp)
       }, weatherItem = new WeatherItem(fields);
 
-      this.weatherList.push(weatherItem);
-      console.log(this.weatherList);
+      this._weatherService.updateWeatherList(weatherItem);
     });
   }
 
