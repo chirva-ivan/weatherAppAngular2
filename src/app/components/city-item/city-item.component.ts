@@ -13,7 +13,6 @@ import { CityItem } from '../../classes/city-item';
 export class CityItemComponent implements OnInit {
 
   @Input() results: Observable<any>;
-  @Input() selected: any;
   @Output() searchEvent = new EventEmitter();
   @Output() selectEvent = new EventEmitter();
 
@@ -23,6 +22,11 @@ export class CityItemComponent implements OnInit {
     this.searchBox
       .valueChanges
       .subscribe((event: string) => this.searchEvent.emit(event));
+  }
+
+  itemSelect(item) {
+    this.selectEvent.emit(item);
+    this.searchBox.reset();
   }
 
   ngOnInit() {

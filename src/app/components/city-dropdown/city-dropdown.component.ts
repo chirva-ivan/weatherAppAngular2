@@ -15,12 +15,15 @@ import { WeatherItem } from '../../classes/weather-item';
 export class CityDropdownComponent implements OnInit {
 
   public cityList: Array<Object> = [];
-  public selectedCity: CityItem = new CityItem({});
   public weatherList: Array<WeatherItem> = [];
 
   constructor(private weatherService: WeatherService) {}
 
   onSearch(query: string) {
+    if (!query) {
+      return;
+    };
+
     this.weatherService.searchCity(query).subscribe(result => {
       this.cityList = result.map(
         (el) => {
@@ -38,7 +41,6 @@ export class CityDropdownComponent implements OnInit {
   }
 
   onSelect(city: CityItem) {
-    this.selectedCity = city;
     this.cityList = [];
     this.weatherService.getWeather(city).subscribe(result => {
       const fields = {

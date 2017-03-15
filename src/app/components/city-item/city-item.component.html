@@ -1,4 +1,4 @@
-<input [formControl]="searchBox" placeholder="Search City" [value]="selected.name"/>
+<input [formControl]="searchBox" placeholder="Search City" />
 <div *ngFor="let item of results">
-  <div (click)="selectEvent.next(item)">{{item.name}}</div>
+  <div (click)="itemSelect(item)">{{item.name}}</div>
 </div>

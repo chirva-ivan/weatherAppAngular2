@@ -10,9 +10,7 @@ export class WeatherService {
 
   public weatherList: EventEmitter<any> = new EventEmitter();
 
-  constructor (private _http: Http) {
-    console.log(123)
-  }
+  constructor (private _http: Http) {}
 
   searchCity(cityName: string): Observable <any> {
     return this._http.get(`http://maps.googleapis.com/maps/api/geocode/json?address=${cityName}`)
