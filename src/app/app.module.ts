@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { AppComponent } from './app.component';
 import { CityDropdownComponent } from './components/city-dropdown/city-dropdown.component';
@@ -22,7 +23,10 @@ import { WeatherService } from './services/weather.service';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBKoDrMWtVgwWoV5uoPEwPuHHyi0qcFPoA'
+    })
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]
