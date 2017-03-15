@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
@@ -20,9 +20,15 @@ export class WeatherService {
   }
 
   getWeather(city): Observable <any> {
-    const url = `http://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lng}&APPID=c53269f6632df35d2665dbc13b3ab454`;
+    const url = `http://api.openweathermap.org/data/2.5/weather`,
+      params = new URLSearchParams();
 
-    return this._http.get(url)
+    params.set('lat', city.lat);
+    params.set('lon', city.lng);
+    params.set('APPID', 'c53269f6632df35d2665dbc13b3ab454');
+    params.set('units', 'metric');
+
+    return this._http.get(url, { search: params })
       .map((response) => {
         const data = response.json();
         return data;
