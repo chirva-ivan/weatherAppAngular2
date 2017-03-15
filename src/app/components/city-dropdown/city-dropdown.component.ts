@@ -5,6 +5,7 @@ import 'rxjs/Rx';
 
 import { WeatherService } from '../../services/weather.service';
 import { CityItem } from '../../classes/city-item';
+import { WeatherItem } from '../../classes/weather-item';
 
 @Component({
   selector: 'app-city-dropdown',
@@ -16,6 +17,7 @@ export class CityDropdownComponent implements OnInit {
 
   public cityList: Array<Object> = [];
   public selectedCity: CityItem = new CityItem({});
+  public weatherList: Array<WeatherItem> = [];
 
   constructor(private _weatherService: WeatherService) {}
 
@@ -40,7 +42,14 @@ export class CityDropdownComponent implements OnInit {
     this.selectedCity = city;
     this.cityList = [];
     this._weatherService.getWeather(city).subscribe(result => {
-      console.log(result);
+      const fields = {
+        city,
+        description: result.weather[0].description,
+        temp: Math.floor(result.main.temp)
+      }, weatherItem = new WeatherItem(fields);
+
+      this.weatherList.push(weatherItem);
+      console.log(this.weatherList);
     });
   }
 
