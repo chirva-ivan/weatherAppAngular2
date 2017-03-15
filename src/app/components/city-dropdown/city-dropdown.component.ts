@@ -7,12 +7,12 @@ import { WeatherService } from '../../services/weather.service';
 import { CityItem } from '../../classes/city-item';
 
 @Component({
-  selector: 'app-weather-dropdown',
-  templateUrl: './weather-dropdown.component.html',
-  styleUrls: ['./weather-dropdown.component.css'],
+  selector: 'app-city-dropdown',
+  templateUrl: './city-dropdown.component.html',
+  styleUrls: ['./city-dropdown.component.css'],
   providers: [WeatherService]
 })
-export class WeatherDropdownComponent implements OnInit {
+export class CityDropdownComponent implements OnInit {
 
   public cityList: Array<Object> = [];
   public selectedCity: CityItem = new CityItem({});
@@ -39,6 +39,9 @@ export class WeatherDropdownComponent implements OnInit {
   onSelect(city: CityItem) {
     this.selectedCity = city;
     this.cityList = [];
+    this._weatherService.getWeather(city).subscribe(result => {
+      console.log(result);
+    });
   }
 
   ngOnInit() {

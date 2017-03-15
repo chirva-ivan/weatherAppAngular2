@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WeatherDropdownComponent } from './weather-dropdown.component';
+import { CityDropdownComponent } from './city-dropdown.component';
 
-describe('WeatherDropdownComponent', () => {
-  let component: WeatherDropdownComponent;
-  let fixture: ComponentFixture<WeatherDropdownComponent>;
+describe('CityDropdownComponent', () => {
+  let component: CityDropdownComponent;
+  let fixture: ComponentFixture<CityDropdownComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WeatherDropdownComponent ]
+      declarations: [ CityDropdownComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WeatherDropdownComponent);
+    fixture = TestBed.createComponent(CityDropdownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

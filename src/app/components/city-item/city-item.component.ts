@@ -6,11 +6,11 @@ import 'rxjs/Rx';
 import { CityItem } from '../../classes/city-item';
 
 @Component({
-  selector: 'app-weather-item',
-  templateUrl: './weather-item.component.html',
-  styleUrls: ['./weather-item.component.css']
+  selector: 'app-city-item',
+  templateUrl: './city-item.component.html',
+  styleUrls: ['./city-item.component.css']
 })
-export class WeatherItemComponent implements OnInit {
+export class CityItemComponent implements OnInit {
 
   @Input() results: Observable<any>;
   @Input() selected: any;
