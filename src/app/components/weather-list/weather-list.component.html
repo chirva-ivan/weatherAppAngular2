@@ -1,5 +1,3 @@
 <div *ngFor="let item of weatherList">
-  <div>{{item.name}}</div>
-  <div>{{item.description}}</div>
-  <div>{{item.temp}}</div>
+  <div>{{item.city.name}} / {{item.description}} / {{item.temp}}</div>
 </div>

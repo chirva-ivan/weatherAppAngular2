@@ -6,21 +6,20 @@ import { WeatherItem } from '../../classes/weather-item';
 @Component({
   selector: 'app-weather-list',
   templateUrl: './weather-list.component.html',
-  styleUrls: ['./weather-list.component.css'],
-  providers: [WeatherService]
+  styleUrls: ['./weather-list.component.css']
 })
 export class WeatherListComponent implements OnInit {
 
-  public weatherList: Array<WeatherItem>;
+  public weatherList: Array<WeatherItem> = [];
 
-  constructor(private _weatherService: WeatherService) {
-    _weatherService.listUpdated.subscribe((event) => {
-      this.weatherList = this._weatherService.getWeatherList();
-      console.log(event);
-    });
-  }
+  constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
+    this.weatherService.getWeatherList()
+      .subscribe(item => {
+        console.log(item);
+        this.weatherList.push(item);
+    });
   }
 
 }

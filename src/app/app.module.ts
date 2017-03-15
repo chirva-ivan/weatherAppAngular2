@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CityDropdownComponent } from './components/city-dropdown/city-dropdown.component';
 import { CityItemComponent } from './components/city-item/city-item.component';
 import { WeatherListComponent } from './components/weather-list/weather-list.component';
+import { WeatherService } from './services/weather.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { WeatherListComponent } from './components/weather-list/weather-list.com
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

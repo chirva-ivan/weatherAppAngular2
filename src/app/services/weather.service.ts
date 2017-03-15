@@ -8,10 +8,11 @@ import { WeatherItem } from '../classes/weather-item';
 @Injectable()
 export class WeatherService {
 
-  public listUpdated = new EventEmitter();
-  private _weatherList: Array<WeatherItem> = [];
+  public weatherList: EventEmitter<any> = new EventEmitter();
 
-  constructor (private _http: Http) {}
+  constructor (private _http: Http) {
+    console.log(123)
+  }
 
   searchCity(cityName: string): Observable <any> {
     return this._http.get(`http://maps.googleapis.com/maps/api/geocode/json?address=${cityName}`)
@@ -46,12 +47,10 @@ export class WeatherService {
   }
 
   updateWeatherList(item: WeatherItem) {
-    this._weatherList.push(item);
-    this.listUpdated.emit('test');
-    console.log('updateWeatherList');
+    this.weatherList.emit(item);
   }
 
   getWeatherList() {
-    return this._weatherList;
+    return this.weatherList;
   }
 }
