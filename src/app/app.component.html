@@ -9,6 +9,7 @@
       [zoom]="mapParams.zoom"
       [disableDefaultUI]="mapParams.disableDefaultUI"
       [zoomControl]="mapParams.zoomControl"
+      (mapClick)="mapClicked($event)"
     >
       <sebm-google-map-marker
         *ngFor="let marker of markersList"

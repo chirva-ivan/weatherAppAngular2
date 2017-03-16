@@ -12,8 +12,19 @@ export class WeatherService {
 
   constructor (private _http: Http) {}
 
-  searchCity(cityName: string): Observable <any> {
-    return this._http.get(`http://maps.googleapis.com/maps/api/geocode/json?address=${cityName}`)
+  searchCity(cityName?: string, lat?: number, lng?: number): Observable <any> {
+    const url = `http://maps.googleapis.com/maps/api/geocode/json`,
+      params = new URLSearchParams();
+
+    if (cityName) {
+      params.set('address', cityName);
+    }
+
+    if (lat && lng) {
+      params.set('latlng', `${lat},${lng}`);
+    }
+
+    return this._http.get(url, { search: params })
       .map((response) => {
         const data = response.json();
         return data.results;
