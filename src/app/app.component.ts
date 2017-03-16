@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MapService } from './services/map.service';
+import { WeatherService } from './services/weather.service';
 
 @Component({
   selector: 'app-root',
@@ -18,13 +18,13 @@ export class AppComponent implements OnInit {
     zoomControl: false
   };
 
-  constructor(private mapService: MapService) {}
+  constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
-    this.mapService.getMarkers()
+    this.weatherService.getWeatherList()
       .subscribe(item => {
         this.markersList.push(item);
-        this.zoomOnMarker(item.lat, item.lng);
+        this.zoomOnMarker(item.city.lat, item.city.lng);
     });
   }
 

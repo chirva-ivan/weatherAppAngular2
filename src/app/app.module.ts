@@ -10,7 +10,6 @@ import { CityDropdownComponent } from './components/city-dropdown/city-dropdown.
 import { CityItemComponent } from './components/city-item/city-item.component';
 import { WeatherListComponent } from './components/weather-list/weather-list.component';
 import { WeatherService } from './services/weather.service';
-import { MapService } from './services/map.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,7 @@ import { MapService } from './services/map.service';
       apiKey: 'AIzaSyBKoDrMWtVgwWoV5uoPEwPuHHyi0qcFPoA'
     })
   ],
-  providers: [WeatherService, MapService],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
