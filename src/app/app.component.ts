@@ -10,7 +10,7 @@ import { MapService } from './services/map.service';
 export class AppComponent implements OnInit {
 
   public markersList: Array<any> = [];
-  public initialMapParams: object = {
+  public mapParams: any = {
     latitude: 59.9342802,
     longitude: 30.3350986,
     zoom: 8,
@@ -23,8 +23,13 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.mapService.getMarkers()
       .subscribe(item => {
-        console.log(item);
         this.markersList.push(item);
+        this.zoomOnMarker(item.lat, item.lng);
     });
+  }
+
+  zoomOnMarker(lat, lng) {
+    this.mapParams.latitude = lat;
+    this.mapParams.longitude = lng;
   }
 }
