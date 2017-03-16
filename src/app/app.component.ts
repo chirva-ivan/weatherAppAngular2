@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { WeatherService } from './services/weather.service';
+import { CityItem } from './classes/city-item';
+import { WeatherItem } from './classes/weather-item';
 
 @Component({
   selector: 'app-root',
@@ -34,11 +36,24 @@ export class AppComponent implements OnInit {
   }
 
   mapClicked(event) {
-    this.weatherService.searchCity({
+    const coords = {
       lat: event.coords.lat,
       lng: event.coords.lng
-    }).subscribe(result => {
-      console.log(result);
+    }, city = new CityItem(coords);
+
+    this.weatherService.searchCity(coords).subscribe(result => {
+      city.name = result[0].formatted_address;
+    });
+
+    this.weatherService.getWeather(city).subscribe(result => {
+      const fields = {
+        city,
+        description: result.weather[0].description,
+        temp: Math.floor(result.main.temp),
+        isOpen: true
+      }, weatherItem = new WeatherItem(fields);
+
+      this.markersList.push(weatherItem);
     });
   }
 }

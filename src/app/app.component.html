@@ -16,7 +16,7 @@
         [latitude]="marker.city.lat"
         [longitude]="marker.city.lng"
       >
-        <sebm-google-map-info-window>
+        <sebm-google-map-info-window [isOpen]='marker.isOpen'>
           <div>{{marker.city.name}}</div>
           <div>{{marker.description}}</div>
           <div>{{marker.temp}}</div>
