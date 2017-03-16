@@ -24,7 +24,7 @@ export class CityDropdownComponent implements OnInit {
       return;
     };
 
-    this.weatherService.searchCity(query).subscribe(result => {
+    this.weatherService.searchCity({name: query}).subscribe(result => {
       this.cityList = result.map(
         (el) => {
           const fields = {

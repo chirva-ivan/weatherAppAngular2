@@ -34,7 +34,10 @@ export class AppComponent implements OnInit {
   }
 
   mapClicked(event) {
-    this.weatherService.searchCity('', event.coords.lat, event.coords.lng).subscribe(result => {
+    this.weatherService.searchCity({
+      lat: event.coords.lat,
+      lng: event.coords.lng
+    }).subscribe(result => {
       console.log(result);
     });
   }

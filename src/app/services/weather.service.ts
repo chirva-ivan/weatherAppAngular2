@@ -12,12 +12,12 @@ export class WeatherService {
 
   constructor (private _http: Http) {}
 
-  searchCity(cityName?: string, lat?: number, lng?: number): Observable <any> {
+  searchCity({name, lat, lng}: {name?: string, lat?: number, lng?: number}): Observable <any> {
     const url = `http://maps.googleapis.com/maps/api/geocode/json`,
       params = new URLSearchParams();
 
-    if (cityName) {
-      params.set('address', cityName);
+    if (name) {
+      params.set('address', name);
     }
 
     if (lat && lng) {
