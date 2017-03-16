@@ -4,6 +4,7 @@ import { Observer } from 'rxjs/Observer';
 import 'rxjs/Rx';
 
 import { WeatherService } from '../../services/weather.service';
+import { MapService } from '../../services/map.service';
 import { CityItem } from '../../classes/city-item';
 import { WeatherItem } from '../../classes/weather-item';
 
@@ -17,7 +18,10 @@ export class CityDropdownComponent implements OnInit {
   public cityList: Array<Object> = [];
   public weatherList: Array<WeatherItem> = [];
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(
+    private weatherService: WeatherService,
+    private mapService: MapService
+  ) {}
 
   onSearch(query: string) {
     if (!query) {
@@ -50,6 +54,7 @@ export class CityDropdownComponent implements OnInit {
       }, weatherItem = new WeatherItem(fields);
 
       this.weatherService.updateWeatherList(weatherItem);
+      this.mapService.addMarker(city.lat, city.lng);
     });
   }
 
