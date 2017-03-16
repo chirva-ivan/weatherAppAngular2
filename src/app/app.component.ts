@@ -10,6 +10,13 @@ import { MapService } from './services/map.service';
 export class AppComponent implements OnInit {
 
   public markersList: Array<any> = [];
+  public initialMapParams: object = {
+    latitude: 59.9342802,
+    longitude: 30.3350986,
+    zoom: 8,
+    disableDefaultUI: false,
+    zoomControl: false
+  };
 
   constructor(private mapService: MapService) {}
 

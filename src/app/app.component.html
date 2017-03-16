@@ -3,7 +3,13 @@
   <div class="col-md-4">
     <app-city-dropdown></app-city-dropdown>
     <app-weather-list></app-weather-list>
-    <sebm-google-map>
+    <sebm-google-map
+      [latitude]="initialMapParams.latitude"
+      [longitude]="initialMapParams.longitude"
+      [zoom]="initialMapParams.zoom"
+      [disableDefaultUI]="initialMapParams.disableDefaultUI"
+      [zoomControl]="initialMapParams.zoomControl"
+    >
       <sebm-google-map-marker
         *ngFor="let marker of markersList"
         [latitude]="marker.lat"
