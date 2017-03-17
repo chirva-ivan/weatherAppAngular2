@@ -10,7 +10,7 @@ import { WeatherItem } from '../../classes/weather-item';
 })
 export class WeatherListComponent implements OnInit {
 
-  public weatherList: Array<WeatherItem> = this.weatherService.getWeatherList();
+  public weatherList = this.weatherService.getWeatherList();
 
   constructor(private weatherService: WeatherService) {}
 

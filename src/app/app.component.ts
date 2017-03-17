@@ -11,7 +11,7 @@ import { WeatherItem } from './classes/weather-item';
 })
 export class AppComponent implements OnInit {
 
-  public markersList: Array<any> = this.weatherService.getWeatherList();
+  public markersList = this.weatherService.getWeatherList();
   public mapParams: any = {
     latitude: 59.9342802,
     longitude: 30.3350986,

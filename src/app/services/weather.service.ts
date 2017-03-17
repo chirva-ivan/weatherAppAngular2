@@ -4,12 +4,13 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 import { WeatherItem } from '../classes/weather-item';
+import { WeatherList } from '../classes/weather-list';
 
 @Injectable()
 export class WeatherService {
 
   public weatherListEvent: EventEmitter<any> = new EventEmitter();
-  public weatherList: Array<WeatherItem> = [];
+  public weatherList: WeatherList<WeatherItem> = [];
 
   constructor (private _http: Http) {}
 
