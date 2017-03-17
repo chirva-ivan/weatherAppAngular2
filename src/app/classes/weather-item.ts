@@ -22,4 +22,8 @@ export class WeatherItem {
     this.temp = temp;
     this.isOpen = isOpen;
   }
+
+  get tempString() {
+    return `${this.temp} \xB0C`;
+  }
 }
