@@ -1,9 +1,9 @@
 <div>
-  <span (click)="sortBy('city.name')">Name</span>
+  <span>Name</span>
   <span> / </span>
-  <span (click)="sortBy('description')">Description</span>
+  <span (click)="weatherList.sortBy('description')">Description</span>
   <span> / </span>
-  <span (click)="sortBy('temp')">Temperature</span>
+  <span (click)="weatherList.sortBy('temp')">Temperature</span>
 </div>
 <div *ngFor="let item of weatherList">
   <div>{{item.city.name}} / {{item.description}} / {{item.tempString}}</div>

@@ -10,7 +10,7 @@ import { WeatherList } from '../classes/weather-list';
 export class WeatherService {
 
   public weatherListEvent: EventEmitter<any> = new EventEmitter();
-  public weatherList: WeatherList<WeatherItem> = [];
+  public weatherList: WeatherList<WeatherItem> = new WeatherList<WeatherItem>();
 
   constructor (private _http: Http) {}
 
