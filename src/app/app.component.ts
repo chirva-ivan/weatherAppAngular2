@@ -11,7 +11,7 @@ import { WeatherItem } from './classes/weather-item';
 })
 export class AppComponent implements OnInit {
 
-  public markersList: Array<any> = [];
+  public markersList: Array<any> = this.weatherService.getWeatherList();
   public mapParams: any = {
     latitude: 59.9342802,
     longitude: 30.3350986,
@@ -23,9 +23,8 @@ export class AppComponent implements OnInit {
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
-    this.weatherService.getWeatherList()
+    this.weatherService.getWeatherListEvent()
       .subscribe(item => {
-        this.markersList.push(item);
         this.zoomOnMarker(item.city.lat, item.city.lng);
     });
   }

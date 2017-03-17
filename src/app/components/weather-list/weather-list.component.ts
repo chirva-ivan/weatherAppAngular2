@@ -10,15 +10,14 @@ import { WeatherItem } from '../../classes/weather-item';
 })
 export class WeatherListComponent implements OnInit {
 
-  public weatherList: Array<WeatherItem> = [];
+  public weatherList: Array<WeatherItem> = this.weatherService.getWeatherList();
 
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
-    this.weatherService.getWeatherList()
+    this.weatherService.getWeatherListEvent()
       .subscribe(item => {
         console.log(item);
-        this.weatherList.push(item);
     });
   }
 

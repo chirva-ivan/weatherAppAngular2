@@ -8,7 +8,8 @@ import { WeatherItem } from '../classes/weather-item';
 @Injectable()
 export class WeatherService {
 
-  public weatherList: EventEmitter<any> = new EventEmitter();
+  public weatherListEvent: EventEmitter<any> = new EventEmitter();
+  public weatherList: Array<WeatherItem> = [];
 
   constructor (private _http: Http) {}
 
@@ -56,7 +57,12 @@ export class WeatherService {
   }
 
   updateWeatherList(item: WeatherItem) {
-    this.weatherList.emit(item);
+    this.weatherListEvent.emit(item);
+    this.weatherList.push(item);
+  }
+
+  getWeatherListEvent() {
+    return this.weatherListEvent;
   }
 
   getWeatherList() {
