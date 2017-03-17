@@ -2,7 +2,6 @@
   <h1 class="col-md-12">Angular 2 Weather App</h1>
   <div class="col-md-4">
     <app-city-dropdown></app-city-dropdown>
-    <app-weather-list></app-weather-list>
     <sebm-google-map
       [latitude]="mapParams.latitude"
       [longitude]="mapParams.longitude"
@@ -23,5 +22,6 @@
         </sebm-google-map-info-window>
       </sebm-google-map-marker>
     </sebm-google-map>
+    <app-weather-list></app-weather-list>
   </div>
 </div>

@@ -1,0 +1,12 @@
+.dropdown_list {
+  position: absolute;
+  z-index: 1000;
+  background: white;
+}
+.dropdown_list .dropdown_item {
+  cursor: pointer;
+}
+.dropdown_list .dropdown_item:hover {
+  background: blue;
+  color: white;
+}
