@@ -21,4 +21,8 @@ export class WeatherList<T> extends Array<T> {
       }
     );
   }
+
+  delete(item) {
+    return this.splice(this.indexOf(item), 1);
+  }
 }
