@@ -16,8 +16,6 @@ export class WeatherListComponent implements OnInit {
 
   ngOnInit() {
     this.weatherService.getWeatherListEvent()
-      .subscribe(item => {
-        console.log(item);
-    });
+      .subscribe();
   }
 }
