@@ -46,6 +46,7 @@ export class CityDropdownComponent implements OnInit {
       const fields = {
         city,
         description: result.weather[0].description,
+        icon: result.weather[0].icon,
         temp: Math.floor(result.main.temp)
       }, weatherItem = new WeatherItem(fields);
 
