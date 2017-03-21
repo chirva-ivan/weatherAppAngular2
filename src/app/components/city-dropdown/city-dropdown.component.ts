@@ -54,7 +54,6 @@ export class CityDropdownComponent implements OnInit {
   }
 
   onBlur() {
-    this.weatherService.clearWeatherList();
     this.cityList = [];
   }
 
