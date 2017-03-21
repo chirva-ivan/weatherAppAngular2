@@ -6,7 +6,7 @@
   <span (click)="weatherList.sortBy('temp')">Temperature</span>
 </div>
 <div *ngFor="let item of weatherList">
-  <div>
+  <div class="weather-item">
     <span>{{item.city.name}} / {{item.tempString}}</span>
     <img src="{{item.iconUrl}}" title="{{item.description}}">
     <span (click)="weatherList.delete(item)">|X|</span>

@@ -8,7 +8,7 @@ import { CityItem } from '../../classes/city-item';
 @Component({
   selector: 'app-city-item',
   templateUrl: './city-item.component.html',
-  styleUrls: ['./city-item.component.css']
+  styleUrls: ['./city-item.component.scss']
 })
 export class CityItemComponent implements OnInit {
 

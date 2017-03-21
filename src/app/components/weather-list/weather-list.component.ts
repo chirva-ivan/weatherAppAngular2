@@ -6,7 +6,7 @@ import { WeatherItem } from '../../classes/weather-item';
 @Component({
   selector: 'app-weather-list',
   templateUrl: './weather-list.component.html',
-  styleUrls: ['./weather-list.component.css']
+  styleUrls: ['./weather-list.component.scss']
 })
 export class WeatherListComponent implements OnInit {
 

@@ -10,7 +10,7 @@ import { WeatherItem } from '../../classes/weather-item';
 @Component({
   selector: 'app-city-dropdown',
   templateUrl: './city-dropdown.component.html',
-  styleUrls: ['./city-dropdown.component.css']
+  styleUrls: ['./city-dropdown.component.scss']
 })
 export class CityDropdownComponent implements OnInit {
 
