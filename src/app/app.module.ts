@@ -10,13 +10,15 @@ import { CityDropdownComponent } from './components/city-dropdown/city-dropdown.
 import { CityItemComponent } from './components/city-item/city-item.component';
 import { WeatherListComponent } from './components/weather-list/weather-list.component';
 import { WeatherService } from './services/weather.service';
+import { OutsideClickDirective } from './directives/outside-click.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CityDropdownComponent,
     CityItemComponent,
-    WeatherListComponent
+    WeatherListComponent,
+    OutsideClickDirective
   ],
   imports: [
     BrowserModule,

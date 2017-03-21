@@ -31,6 +31,7 @@ export class CityItemComponent implements OnInit {
   }
 
   onBlur() {
+    console.log(123);
     this.blurEvent.emit();
   }
 
