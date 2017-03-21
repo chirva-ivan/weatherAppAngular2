@@ -1,3 +1,39 @@
-.weather-item {
-  width: 400px;
+@import 'src/styles';
+
+.weather_list {
+  .weather_item {
+    display: flex;
+    width: 400px;
+    margin: 10px 0;
+    position: relative;
+    border: 1px solid $border-color;
+
+    .weather_item_title {
+      width: 300px;
+    }
+
+    .btn_close_wrapper {
+      width: 13px;
+      height: 13px;
+      overflow: hidden;
+      position: absolute;
+      opacity: 0.7;
+      right: 6px;
+      top: 6px;
+      cursor: pointer;
+
+      img {
+        position: absolute;
+        left: -2px;
+        top: -336px;
+        width: 59px;
+        height: 492px;
+        user-select: none;
+        border: 0px;
+        padding: 0px;
+        margin: 0px;
+        max-width: none;
+      }
+    }
+  }
 }
