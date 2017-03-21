@@ -15,6 +15,7 @@ export class CityItemComponent implements OnInit {
   @Input() results: Observable<any>;
   @Output() searchEvent = new EventEmitter();
   @Output() selectEvent = new EventEmitter();
+  @Output() blurEvent = new EventEmitter();
 
   searchBox: FormControl = new FormControl();
 
@@ -27,6 +28,10 @@ export class CityItemComponent implements OnInit {
   itemSelect(item) {
     this.selectEvent.emit(item);
     this.searchBox.reset();
+  }
+
+  onBlur() {
+    this.blurEvent.emit();
   }
 
   ngOnInit() {

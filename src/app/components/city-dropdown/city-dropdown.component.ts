@@ -53,6 +53,10 @@ export class CityDropdownComponent implements OnInit {
     });
   }
 
+  onBlur() {
+    this.cityList = [];
+  }
+
   ngOnInit() {
   }
 

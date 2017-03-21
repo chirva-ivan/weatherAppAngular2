@@ -62,6 +62,10 @@ export class WeatherService {
     this.weatherList.push(item);
   }
 
+  clearWeatherList() {
+    this.weatherList.splice(0, this.weatherList.length);
+  }
+
   getWeatherListEvent() {
     return this.weatherListEvent;
   }
