@@ -1,6 +1,12 @@
 import { MapTypeStyle } from 'angular2-google-maps/core/services/google-maps-types';
 
 export class MapStyles {
+
+  public static latitude = 59.9342802;
+  public static longitude = 30.3350986;
+  public static zoom = 8;
+  public static disableDefaultUI = false;
+  public static zoomControl = false;
   public static styles: MapTypeStyle[] = [
     {
       'elementType': 'geometry',

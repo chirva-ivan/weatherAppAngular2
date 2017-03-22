@@ -13,14 +13,7 @@ import { MapStyles } from './classes/map-styles';
 export class AppComponent implements OnInit {
 
   public markersList = this.weatherService.getWeatherList();
-  public mapParams: any = {
-    latitude: 59.9342802,
-    longitude: 30.3350986,
-    zoom: 8,
-    disableDefaultUI: false,
-    zoomControl: false,
-    styles: MapStyles.styles
-  };
+  public mapParams = MapStyles;
 
   constructor(private weatherService: WeatherService) { }
 
