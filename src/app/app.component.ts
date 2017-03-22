@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { WeatherService } from './services/weather.service';
 import { CityItem } from './classes/city-item';
 import { WeatherItem } from './classes/weather-item';
-import { MapStyles } from './classes/map-styles';
+import { MapParams } from './classes/map-params';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ import { MapStyles } from './classes/map-styles';
 export class AppComponent implements OnInit {
 
   public markersList = this.weatherService.getWeatherList();
-  public mapParams = MapStyles;
+  public mapParams = MapParams;
 
   constructor(private weatherService: WeatherService) { }
 
