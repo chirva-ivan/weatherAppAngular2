@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { WeatherService } from './services/weather.service';
 import { CityItem } from './classes/city-item';
 import { WeatherItem } from './classes/weather-item';
+import { MapStyles } from './classes/map-styles';
 
 @Component({
   selector: 'app-root',
@@ -17,16 +18,17 @@ export class AppComponent implements OnInit {
     longitude: 30.3350986,
     zoom: 8,
     disableDefaultUI: false,
-    zoomControl: false
+    zoomControl: false,
+    styles: MapStyles.styles
   };
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
     this.weatherService.getWeatherListEvent()
       .subscribe(item => {
         this.zoomOnMarker(item.city.lat, item.city.lng);
-    });
+      });
   }
 
   zoomOnMarker(lat, lng) {
