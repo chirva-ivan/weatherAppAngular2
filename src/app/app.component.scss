@@ -1,7 +1,7 @@
 @import 'src/styles';
 
 .sebm-google-map-container {
-  height: 300px;
+  height: 1000px;
 }
 
 header {
@@ -14,16 +14,21 @@ header {
     position: absolute;
     background-color: $white-color;
     opacity: 0.5;
-    height: 160px;
+    height: 130px;
     width: 100%;
   }
 
   .header_wrapper {
     display: flex;
-    padding: 20px;
+    padding-top: 50px;
+    justify-content: space-around;
 
     h1 {
       margin: 0;
+    }
+
+    .right_side_wrapper {
+      width: 400px;
     }
   }
 }

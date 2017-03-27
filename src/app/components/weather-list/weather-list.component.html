@@ -1,16 +1,15 @@
-<div>
-  <span>Name</span>
-  <span> / </span>
-  <span (click)="weatherList.sortBy('description')">Description</span>
-  <span> / </span>
-  <span (click)="weatherList.sortBy('temp')">Temperature</span>
-</div>
 <div class="weather_list">
-  <div class="weather_item" *ngFor="let item of weatherList">
-    <div class="weather_item_title">{{item.city.name}} / {{item.tempString}}</div>
-    <img src="{{item.iconUrl}}" title="{{item.description}}">
-    <div class="btn_close_wrapper">
-      <img src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" (click)="weatherList.delete(item)">
+  <div class="btn_filter_wrapper">
+    <div class="btn_filter">Name</div>
+    <div class="btn_filter" (click)="weatherList.sortBy('temp')">Temperature</div>
+  </div>
+  <div>
+    <div class="weather_item" *ngFor="let item of weatherList">
+      <div class="weather_item_title">{{item.city.name}} / {{item.tempString}}</div>
+      <img src="{{item.iconUrl}}" title="{{item.description}}">
+      <div class="btn_close_wrapper">
+        <img src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" (click)="weatherList.delete(item)">
+      </div>
     </div>
   </div>
 </div>

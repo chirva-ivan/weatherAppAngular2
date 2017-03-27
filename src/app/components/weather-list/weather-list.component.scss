@@ -1,6 +1,29 @@
 @import 'src/styles';
 
 .weather_list {
+  display: block;
+  margin-top: 60px;
+  background-color: $light-grey-color;
+  padding: 10px;
+
+  .btn_filter_wrapper {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+
+    .btn_filter {
+      padding: 16px 0;
+      border-bottom: 1px solid $black-color;
+      width: 100%;
+      text-transform: uppercase;
+    }
+
+    .btn_filter:hover {
+      background-color: darken( $light-grey-color, 2% );
+      cursor: pointer;
+    }
+  }
+
   .weather_item {
     display: flex;
     width: 400px;
