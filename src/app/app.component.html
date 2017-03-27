@@ -1,14 +1,4 @@
 <div>
-  <header>
-    <div class="header_background"></div>
-    <div class="header_wrapper">
-      <h1>Angular 2 Weather App</h1>
-      <div class="right_side_wrapper">
-        <app-city-dropdown></app-city-dropdown>
-        <app-weather-list></app-weather-list>
-      </div>
-    </div>
-  </header>
   <div>
     <sebm-google-map
       [latitude]="mapParams.latitude"
@@ -31,5 +21,15 @@
         </sebm-google-map-info-window>
       </sebm-google-map-marker>
     </sebm-google-map>
+  <header>
+    <div class="header_background"></div>
+    <div class="header_wrapper">
+      <h3>Angular 2 Weather App</h3>
+      <div class="right_side_wrapper">
+        <app-city-dropdown></app-city-dropdown>
+        <app-weather-list></app-weather-list>
+      </div>
+    </div>
+  </header>
   </div>
 </div>

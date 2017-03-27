@@ -19,16 +19,18 @@ header {
   }
 
   .header_wrapper {
-    display: flex;
     padding-top: 50px;
-    justify-content: space-around;
 
-    h1 {
+    h3 {
       margin: 0;
+      position: absolute;
+      left: 20%;
     }
 
     .right_side_wrapper {
-      width: 400px;
+      width: 300px;
+      position: absolute;
+      right: 20%;
     }
   }
 }
