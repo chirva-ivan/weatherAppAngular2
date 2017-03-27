@@ -1,4 +1,4 @@
-<input [formControl]="searchBox" placeholder="Search City" appOutsideClick (clickOutside)="onBlur()"/>
+<input [formControl]="searchBox" placeholder="Name" appOutsideClick (clickOutside)="onBlur()"/>
 <div class="dropdown_list">
   <div *ngFor="let item of results" class="dropdown_item">
     <div (click)="itemSelect(item)">{{item.name}}</div>

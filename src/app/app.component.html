@@ -1,7 +1,12 @@
-<div class="row">
-  <h1 class="col-md-12">Angular 2 Weather App</h1>
-  <div class="col-md-4">
-    <app-city-dropdown></app-city-dropdown>
+<div>
+  <header>
+    <div class="header_background"></div>
+    <div class="header_wrapper">
+      <h1>Angular 2 Weather App</h1>
+      <app-city-dropdown></app-city-dropdown>
+    </div>
+  </header>
+  <div>
     <sebm-google-map
       [latitude]="mapParams.latitude"
       [longitude]="mapParams.longitude"

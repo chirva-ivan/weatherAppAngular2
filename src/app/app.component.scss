@@ -1,3 +1,29 @@
+@import 'src/styles';
+
 .sebm-google-map-container {
   height: 300px;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+
+  .header_background {
+    position: absolute;
+    background-color: $white-color;
+    opacity: 0.5;
+    height: 160px;
+    width: 100%;
+  }
+
+  .header_wrapper {
+    display: flex;
+    padding: 20px;
+
+    h1 {
+      margin: 0;
+    }
+  }
 }
