@@ -5,8 +5,11 @@
   </div>
   <div>
     <div class="weather_item" *ngFor="let item of weatherList">
-      <div class="weather_item_title">{{item.city.name}} / {{item.tempString}}</div>
-      <img src="{{item.iconUrl}}" title="{{item.description}}">
+      <div class="weather_item_title">{{item.city.name}}</div>
+      <div class="weather_item_temperature_wrapper">
+        <img src="{{item.iconUrl}}" title="{{item.description}}">
+        <div class="weather_item_temperature">{{item.tempString}}</div>
+      </div>
       <div class="btn_close_wrapper">
         <img src="http://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" (click)="weatherList.delete(item)">
       </div>

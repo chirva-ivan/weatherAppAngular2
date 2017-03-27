@@ -26,13 +26,19 @@
 
   .weather_item {
     display: flex;
-    width: 400px;
+    width: 100%;
     margin: 10px 0;
     position: relative;
-    border: 1px solid $border-color;
+    background-color: $purple-color;
+    border-radius: 5px;
 
     .weather_item_title {
       width: 300px;
+    }
+
+    .weather_item_temperature_wrapper {
+      display: flex;
+      justify-content: space-between;
     }
 
     .btn_close_wrapper {
