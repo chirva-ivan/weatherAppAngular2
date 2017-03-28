@@ -1,7 +1,7 @@
 <div class="weather_list">
   <div class="btn_filter_wrapper">
-    <div class="btn_filter">Name</div>
-    <div class="btn_filter" (click)="weatherList.sortBy('temp')">Temperature</div>
+    <div [ngClass]="key === 'name' ? 'active' : ''" class="btn_filter" (click)="sortBy('name')">Name</div>
+    <div [ngClass]="key === 'temp' ? 'active' : ''" class="btn_filter" (click)="sortBy('temp')">Temperature</div>
   </div>
   <div>
     <div class="weather_item" *ngFor="let item of weatherList">

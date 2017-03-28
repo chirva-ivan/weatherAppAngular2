@@ -12,9 +12,9 @@ export class WeatherService {
   public weatherListEvent: EventEmitter<any> = new EventEmitter();
   public weatherList: WeatherList<WeatherItem> = new WeatherList<WeatherItem>();
 
-  constructor (private _http: Http) {}
+  constructor(private _http: Http) { }
 
-  searchCity({name, lat, lng}: {name?: string, lat?: number, lng?: number}): Observable <any> {
+  searchCity({name, lat, lng}: { name?: string, lat?: number, lng?: number }): Observable<any> {
     const url = `http://maps.googleapis.com/maps/api/geocode/json`,
       params = new URLSearchParams();
 
@@ -37,7 +37,7 @@ export class WeatherService {
       });
   }
 
-  getWeather(city): Observable <any> {
+  getWeather(city): Observable<any> {
     const url = `http://api.openweathermap.org/data/2.5/weather`,
       params = new URLSearchParams();
 

@@ -11,11 +11,17 @@ import { WeatherItem } from '../../classes/weather-item';
 export class WeatherListComponent implements OnInit {
 
   public weatherList = this.weatherService.getWeatherList();
+  public key = '';
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
     this.weatherService.getWeatherListEvent()
-      .subscribe(() => {});
+      .subscribe(() => { });
+  }
+
+  sortBy(key) {
+    this.weatherList.sortBy(key);
+    this.key = key;
   }
 }

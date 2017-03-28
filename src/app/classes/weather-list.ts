@@ -1,6 +1,6 @@
 export class WeatherList<T> extends Array<T> {
 
-  private reverce: Boolean = true;
+  public reverce: Boolean = true;
   private prevKey = '';
 
   sortBy(key) {

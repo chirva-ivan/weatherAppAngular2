@@ -10,17 +10,25 @@
     display: flex;
     justify-content: space-around;
     text-align: center;
+    border-bottom: 1px solid $black-color;
+    box-sizing: border-box;
 
     .btn_filter {
       padding: 16px 0;
-      border-bottom: 1px solid $black-color;
       width: 100%;
       text-transform: uppercase;
+      box-sizing: border-box;
+      height: 50px;
     }
 
     .btn_filter:hover {
       background-color: darken( $light-grey-color, 2% );
       cursor: pointer;
+    }
+
+    .btn_filter.active {
+      border-bottom: 3px solid $black-color;
+      box-sizing: border-box;
     }
   }
 
