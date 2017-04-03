@@ -34,4 +34,8 @@ export class WeatherItem {
   get iconUrl() {
     return `http://openweathermap.org/img/w/${this.icon}.png`;
   }
+
+  get name() {
+    return this.city.name;
+  }
 }

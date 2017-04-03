@@ -1,4 +1,6 @@
-export class WeatherList<T> extends Array<T> {
+import { WeatherItem } from './weather-item';
+
+export class WeatherList<WeatherItem> extends Array<WeatherItem> {
 
   public reverce: Boolean = true;
   private prevKey = '';
